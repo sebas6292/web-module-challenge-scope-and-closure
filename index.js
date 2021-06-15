@@ -27,12 +27,13 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   Study the code for counter1 and counter2, then answer the questions below.
   
-  1. What is the difference between counter1 and counter2?
-  
+   1. What is the difference between counter1 and counter2?
+  - counter2 retrieves the function within the scope and looks more professional. counter 2 retreives the information quicker because its within the scope. 
   2. Which of the two uses a closure? How can you tell?
-  
+  - counter 1 uses a closure because its all within the block scope and its easier to read. 
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+     -counter1 is for functions within a function that applies with the same variable. counter2 uses a varaible in the global scope to effect other functions that relatable. 
 */
 
 // counter1 code
@@ -90,9 +91,12 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
-}
+  function getInningScore(inning) {
+    let score = { Home: 0, Away: 0 };
+    score.Home += inning();
+    score.Away += inning();
+    return score;
+  }
 
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
